@@ -1,0 +1,2 @@
+    import "/media/edgw_/ws/edgw-pages/node_modules/.pnpm/@vuepress+plugin-markdown-ext@2.0.0-rc.118_markdown-it@14.1.0_vuepress@2.0.0-rc.26_@vue_5098275ead82a8b77228bd3ca41cc9e8/node_modules/@vuepress/plugin-markdown-ext/lib/client/styles/footnote.css"
+    import "/media/edgw_/ws/edgw-pages/node_modules/.pnpm/@vuepress+plugin-markdown-ext@2.0.0-rc.118_markdown-it@14.1.0_vuepress@2.0.0-rc.26_@vue_5098275ead82a8b77228bd3ca41cc9e8/node_modules/@vuepress/plugin-markdown-ext/lib/client/styles/tasklist.css"
