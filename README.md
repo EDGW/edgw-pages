@@ -26,7 +26,7 @@ highlights:
     highlights:
       - title: <font color="white">My Github</font>
         details: <font color="white">Visit my repositories and projects</font>
-        link: https://github.com/EDGW_
+        link: https://github.com/EDGW/
       - title: <font color="white">My Blog</font>
         details: <font color="white">Visit kako's space</font>
         link: .
