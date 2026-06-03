@@ -166,7 +166,7 @@ $$\boxed{\oiint_{\partial D}\bm F(\bm P)\cdot \bm n \mathrm dS=\iiint_D (\nabla\
 $$\boxed{\oiint_{\partial D}\bm Q \mathrm dy\mathrm dz + R\mathrm dx\mathrm dz + S\mathrm dx\mathrm dy 
 = \iiint_D (\frac{\partial Q}{\partial x}+\frac{\partial R}{\partial y}+\frac{\partial S}{\partial z})\mathrm dV}$$
 
-此同济版高等数学教材中的格林公式。
+此同济版高等数学教材中的高斯公式。
 
 :::
 
