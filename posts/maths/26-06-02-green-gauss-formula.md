@@ -1,10 +1,119 @@
 ---
 icon: book
-title: 多重积分和斯托克斯公式
+title: 线面积分和斯托克斯公式
 ---
 
 
 个人博客第一篇文居然是数学笔记。。。
+
+# 曲线和曲面积分
+
+## 曲线积分
+
+目前只讨论光滑曲线的情况。
+
+按照积分变量不同可以把曲线积分分成第一类和第二类。
+
+### 第一类曲线积分
+
+第一类曲线积分将弧长作为积分变量，其形式为 $\displaystyle\int_L f(\bm P) \mathrm ds$。
+
+它具有定积分的一般性质。如果$L$分段光滑，则积分可分段求得。
+
+对于参数方程 $\bm x=\bm\varphi(t)$，该曲线的导（切向量）函数为 $\bm\tau=\bm\varphi'(t)$，于是 $\mathrm ds = |\mathrm d\bm x| = |\bm\varphi'(t)||\mathrm dt$|，得到
+
+$$\boxed{\mathrm ds = |\bm\varphi'(t)||\mathrm dt| = \sqrt{\sum \varphi_k'(t)}|\mathrm dt|}$$
+
+替换之后便可以根据 $t$ 的范围把曲线积分转换成有上下限的定积分，值得注意的是，**若 $L$ 是 $t$ 从 $\alpha$ 变化至 $\beta$ 而由参数方程得到的曲线，则求定积分时必要求 $\alpha \le \beta$**，因为 $\mathrm ds$ 总是正数，而 $\mathrm dt$则有可能是负数，仅当要求 $\alpha \le \beta$ 时，才有 $|\mathrm dt| = \mathrm dt$。
+
+### 第二类曲线积分
+
+第二类曲线积分将坐标作为积分变量，其对于第 $k$ 个分量的积分形式为 $\displaystyle \boxed{\int_L f(\bm P)\mathrm dx_k}$。
+
+若有 $n$ 个定义在 $\mathbb{R}^n$ 上的函数 $f_1,\cdots,f_n$，把他们对于 $x_k$ 的积分相加，得到 $\displaystyle I=\int_L \sum_{k=1}^nf_k(\bm P)\mathrm dx_k$，再定义 $\mathbb R^n \rightarrow \mathbb R^n$ 的向量函数 $\bm f(\bm P) = (f_1(\bm P),\cdots,f_n(\bm P))$，$\mathrm d\bm r = (\mathrm d x_1,\cdots,\mathrm dx_n)$，则上述积分可以记为 
+$$\displaystyle \boxed{\int_L\bm f(\bm P)\cdot\mathrm d\bm r}$$
+此为第二类曲线积分的向量形式。
+
+
+对于参数方程 $\bm x=\bm\varphi(t)$，该曲线的导（切向量）函数为 $\bm\varphi'(t)$，于是得到 
+$$\boxed{\begin{cases}
+\mathrm dx_k &= \varphi_k'(t)\mathrm dt \\
+\mathrm d\bm r &= \bm\varphi'(t)\mathrm dt
+\end{cases}
+}$$
+
+于是第二类曲线积分可以写成对切线的积分
+$$\displaystyle \int_L\bm f(\bm P)\cdot\mathrm d\bm r=\int_L\bm f(\bm P)\cdot\bm\varphi' \mathrm dt$$
+于是该积分被称作**环量积分**，单位切向量 $\mathrm d\bm r$ 被称作有向曲线元。
+
+特别地，在 $\mathbb{R^2}$中，光滑曲线有唯一的外单位法向量 $\bm n$，因此可以做积分
+$$\int_L\bm f(\bm P)\cdot\bm n |\mathrm d\bm r|=\int_L\bm f(\bm P)\cdot\bm n |\bm\varphi'|\mathrm dt$$
+该积分被称作 **通量积分**。
+
+值得注意的是，在换元后，第二类曲线积分并没有规定 $\mathrm dt$ 的符号，因此此时可以不计较 $\alpha$ 和 $\beta$ 的大小，所以**此时 $L$ 是一条有向曲线，$\displaystyle \boxed{\int_{L^+}\bm f(\bm P)\cdot\mathrm d\bm r=-\int_{L^-}\bm f(\bm P)\cdot\mathrm d\bm r}$**，$L^+$ 和 $L^-$ 是方向相反的同一条曲线。
+
+### 两类曲线积分的转换
+
+对于环量积分，显然 $\displaystyle \mathrm d\bm r = \bm \varphi' \mathrm dt = \bm \tau\mathrm ds$，$\bm \tau$ 是单位切向量。同理，对于通量积分，显然 $\displaystyle \bm n |\bm\varphi'| \mathrm dt = \bm n\mathrm ds$，$\bm n$ 是单位切向量。
+
+于是**环量积分**可以写作
+$$\boxed{\displaystyle\int_L\bm f(\bm P)\cdot\mathrm d\bm r =\displaystyle\int_L\bm f(\bm P)\cdot \bm \tau \mathrm ds} $$
+**通量积分**可以写作
+$$\boxed{\displaystyle\int_L\bm f(\bm P)\cdot \bm n \mathrm ds}$$
+
+显然 $\bm f(\bm P)\cdot \bm \tau$ 和 $\bm f(\bm P)\cdot \bm n$ 都是 $\mathbb R^n$ 上的标量函数，于是这两个积分都变成了第一类曲线积分。
+
+## 曲面积分
+
+目前只讨论光滑曲面的情况，一个曲面是光滑的，当且仅当曲面上各点都有切平面，且切平面随切点连续运动而连续转动。
+
+曲面积分也可以分为第一类（对面积的）曲面积分和第二类（对坐标的）曲面积分。
+
+### 第一类曲面积分
+
+第一类曲面积分将面积作为积分变量，其形式为 $\displaystyle\iint_\Sigma f(\bm P) \mathrm dS$。
+
+它具有定积分的一般性质。如果$L$分片光滑，则积分可分片求得。
+
+设 $\varSigma$ 由 $\mathbb R^2 \rightarrow \mathbb R^n$ 的函数 $\bm f(t,s)$ 给出，则面积元 $\displaystyle{\mathrm dS =\|\frac{\partial \bm f}{\partial t}\wedge\frac{\partial \bm f}{\partial s}\|}\mathrm dt\mathrm ds$ ，但是这种情况过于复杂了，现在只讨论三维空间中的情况，此时 $\displaystyle\boxed{\mathrm dS = |\frac{\partial \bm f}{\partial t}\times\frac{\partial \bm f}{\partial s}|\mathrm dt\mathrm ds}$ 。
+
+在最简单的情况下，在 $\mathbb R^3$中，$\varSigma$ 由 $F(x,y,z)=0$ 确定的隐函数 $z=z(x,y)$ 等给出，此时$\bm f(x,y,z) = (x,y,z(x,y))$ 等，即
+$$\begin{matrix}
+\displaystyle\mathrm dS &= |\frac{\partial \bm f}{\partial x}\times\frac{\partial \bm f}{\partial y}|\mathrm dx\mathrm dy &= \sqrt{1+(\frac{\partial z}{\partial x})^2+(\frac{\partial z}{\partial y})^2}\mathrm dx \mathrm dy &= \sqrt{(\frac{\partial F}{\partial x})^2+(\frac{\partial F}{\partial y})^2+(\frac{\partial F}{\partial z})^2} |(\frac{\partial F}{\partial z})^{-1}|\mathrm dx\mathrm dy \\
+&= |\frac{\partial \bm f}{\partial y}\times\frac{\partial \bm f}{\partial z}|\mathrm dy\mathrm dz &= \sqrt{1+(\frac{\partial x}{\partial y})^2+(\frac{\partial x}{\partial z})^2}\mathrm dy \mathrm dz  &= \sqrt{(\frac{\partial F}{\partial x})^2+(\frac{\partial F}{\partial y})^2+(\frac{\partial F}{\partial z})^2} |(\frac{\partial F}{\partial x})^{-1}|\mathrm dy\mathrm dz \\
+&= |\frac{\partial \bm f}{\partial x}\times\frac{\partial \bm f}{\partial z}|\mathrm dx\mathrm dz &= \sqrt{1+(\frac{\partial y}{\partial x})^2+(\frac{\partial y}{\partial z})^2}\mathrm dx \mathrm dz &= \sqrt{(\frac{\partial F}{\partial x})^2+(\frac{\partial F}{\partial y})^2+(\frac{\partial F}{\partial z})^2} |(\frac{\partial F}{\partial y})^{-1}|\mathrm dx\mathrm dz \\ 
+\end{matrix}
+$$
+
+整理得
+$$\boxed{\begin{matrix}
+\displaystyle\mathrm dS &= \sqrt{1+(\frac{\partial z}{\partial x})^2+(\frac{\partial z}{\partial y})^2}\mathrm dx \mathrm dy &= |(\frac{\partial F}{\partial z})^{-1}\nabla F|\mathrm dx\mathrm dy \\
+&= \sqrt{1+(\frac{\partial x}{\partial y})^2+(\frac{\partial x}{\partial z})^2}\mathrm dy \mathrm dz &= |(\frac{\partial F}{\partial x})^{-1}\nabla F|\mathrm dy\mathrm dz \\
+&= \sqrt{1+(\frac{\partial y}{\partial x})^2+(\frac{\partial y}{\partial z})^2}\mathrm dx \mathrm dz &= |(\frac{\partial F}{\partial y})^{-1}\nabla F|\mathrm dx\mathrm dz \\
+\end{matrix}}$$
+
+### 第二类曲面积分
+
+第二类曲面积分针对于有向面，其方向由取定的法向量决定。
+
+考虑 $\mathbb R^3$ 中的情况，曲面由 $F(x,y,z)=0$ 确定，此时对于某两个积分变量的积分 
+$$\boxed{\displaystyle\iint_\varSigma f_1(\bm P)\mathrm dx\mathrm dy}$$ 
+称为第二类曲面积分。
+
+同理，将对不同变量的曲面积分合并，得到
+$$\displaystyle\iint_\varSigma f_1(\bm P)\mathrm dx\mathrm dy+f_2(\bm P)\mathrm dy\mathrm dz+f_3(\bm P)\mathrm dx\mathrm dz$$ 
+
+记 $\mathrm d\bm S = (\mathrm dx\mathrm dy,\mathrm dy\mathrm dz,\mathrm dx\mathrm dz)$，把上式记为向量形式，得到
+$$\boxed{\displaystyle\iint_\varSigma \bm f(\bm P)\cdot\mathrm d\bm S}$$
+此为第二类曲面积分的向量形式。
+
+现在解释一下 $\mathrm d\bm S$ 的来源：在 $\bm P$ 点的单位法向量为 $\bm n = \displaystyle\frac{\nabla F}{|\nabla F|}$，面积元为 $\displaystyle \mathrm dS = |(\frac{\partial F}{\partial z})^{-1}\nabla F|\mathrm dx\mathrm dy=|(\frac{\partial F}{\partial x})^{-1}\nabla F|\mathrm dy\mathrm dz=|(\frac{\partial F}{\partial y})^{-1}\nabla F|\mathrm dx\mathrm dz$，于是 $\mathrm d \bm S = \bm n \mathrm dS=(\mathrm dx\mathrm dy,\mathrm dy\mathrm dz,\mathrm dx\mathrm dz)$。
+
+### 两类曲面积分的转换
+
+上面已经轻松给出了
+$$\iint_\varSigma \bm f(\bm P)\cdot\mathrm d\bm S=\iint_\varSigma \bm f(\bm P)\cdot\bm n\mathrm d S$$
+其中 $\bm n$ 是法向量。
 
 ## 引入
 
