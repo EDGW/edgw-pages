@@ -8,8 +8,8 @@ export default defineUserConfig({
   locales: {
     "/": {
       lang: "en-US",
-      title: "Kako's space",
-      description: "Welcome to Kako's space",
+      title: "kako's space",
+      description: "Welcome to kako's space",
     }
   },
 
