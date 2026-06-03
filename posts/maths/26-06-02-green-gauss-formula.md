@@ -137,7 +137,7 @@ $$\boxed{\oint_{\partial D}\bm F\cdot \bm n \mathrm ds=\iint_D (\nabla\cdot\bm F
 
 此处 $D$ 是 $\mathbb{R^2}$ 内某个单连通区域，$\bm n=(\cos\beta,-\cos\alpha)$ 是向外的单位法向量，表示函数 $\bm F$ 在区域 $D$ 的边界 $\partial D$ 的通量等于其散度在 $D$ 内的积分。
 
-$\bm F = (P(x), Q(y))$，定义$\bm R =(Q(x), P(y))$，将上式展开得
+$\bm F = (P(x,y), Q(x,y))$，定义$\bm R =(Q(x,y), P(x,y))$，将上式展开得
 $$\displaystyle\oint_{\partial D}(P,Q)\cdot (\cos \beta, -\cos\alpha) \mathrm ds=
 \boxed{\oint_{\partial D}(P\mathrm dy-Q\mathrm dx) =
 \iint_D (\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y})\mathrm d S}$$
