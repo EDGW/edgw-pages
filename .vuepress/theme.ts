@@ -8,7 +8,7 @@ export default hopeTheme({
 
   author: {
     name: "EDGW_",
-    url: "https://i.kako-chan.cc",
+    url: "https://i.kako-chan.com",
   },
 
   logo: "https://avatars.githubusercontent.com/u/61033043?v=4&size=1024",
