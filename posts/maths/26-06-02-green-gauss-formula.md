@@ -79,17 +79,17 @@ $$\boxed{\displaystyle\int_L\bm f(\bm P)\cdot \bm n \mathrm ds}$$
 
 在最简单的情况下，在 $\mathbb R^3$中，$\varSigma$ 由 $F(x,y,z)=0$ 确定的隐函数 $z=z(x,y)$ 等给出，此时$\bm f(x,y,z) = (x,y,z(x,y))$ 等，即
 $$\begin{matrix}
-\displaystyle\mathrm dS &= |\frac{\partial \bm f}{\partial x}\times\frac{\partial \bm f}{\partial y}|\mathrm dx\mathrm dy &= \sqrt{1+(\frac{\partial z}{\partial x})^2+(\frac{\partial z}{\partial y})^2}\mathrm dx \mathrm dy &= \sqrt{(\frac{\partial F}{\partial x})^2+(\frac{\partial F}{\partial y})^2+(\frac{\partial F}{\partial z})^2} |(\frac{\partial F}{\partial z})^{-1}|\mathrm dx\mathrm dy \\
-&= |\frac{\partial \bm f}{\partial y}\times\frac{\partial \bm f}{\partial z}|\mathrm dy\mathrm dz &= \sqrt{1+(\frac{\partial x}{\partial y})^2+(\frac{\partial x}{\partial z})^2}\mathrm dy \mathrm dz  &= \sqrt{(\frac{\partial F}{\partial x})^2+(\frac{\partial F}{\partial y})^2+(\frac{\partial F}{\partial z})^2} |(\frac{\partial F}{\partial x})^{-1}|\mathrm dy\mathrm dz \\
+\displaystyle\mathrm dS &= |\frac{\partial \bm f}{\partial y}\times\frac{\partial \bm f}{\partial z}|\mathrm dy\mathrm dz &= \sqrt{1+(\frac{\partial x}{\partial y})^2+(\frac{\partial x}{\partial z})^2}\mathrm dy \mathrm dz  &= \sqrt{(\frac{\partial F}{\partial x})^2+(\frac{\partial F}{\partial y})^2+(\frac{\partial F}{\partial z})^2} |(\frac{\partial F}{\partial x})^{-1}|\mathrm dy\mathrm dz \\
 &= |\frac{\partial \bm f}{\partial x}\times\frac{\partial \bm f}{\partial z}|\mathrm dx\mathrm dz &= \sqrt{1+(\frac{\partial y}{\partial x})^2+(\frac{\partial y}{\partial z})^2}\mathrm dx \mathrm dz &= \sqrt{(\frac{\partial F}{\partial x})^2+(\frac{\partial F}{\partial y})^2+(\frac{\partial F}{\partial z})^2} |(\frac{\partial F}{\partial y})^{-1}|\mathrm dx\mathrm dz \\ 
+&= |\frac{\partial \bm f}{\partial x}\times\frac{\partial \bm f}{\partial y}|\mathrm dx\mathrm dy &= \sqrt{1+(\frac{\partial z}{\partial x})^2+(\frac{\partial z}{\partial y})^2}\mathrm dx \mathrm dy &= \sqrt{(\frac{\partial F}{\partial x})^2+(\frac{\partial F}{\partial y})^2+(\frac{\partial F}{\partial z})^2} |(\frac{\partial F}{\partial z})^{-1}|\mathrm dx\mathrm dy \\
 \end{matrix}
 $$
 
 整理得
 $$\boxed{\begin{matrix}
-\displaystyle\mathrm dS &= \sqrt{1+(\frac{\partial z}{\partial x})^2+(\frac{\partial z}{\partial y})^2}\mathrm dx \mathrm dy &= |(\frac{\partial F}{\partial z})^{-1}\nabla F|\mathrm dx\mathrm dy \\
-&= \sqrt{1+(\frac{\partial x}{\partial y})^2+(\frac{\partial x}{\partial z})^2}\mathrm dy \mathrm dz &= |(\frac{\partial F}{\partial x})^{-1}\nabla F|\mathrm dy\mathrm dz \\
+\displaystyle\mathrm dS &= \sqrt{1+(\frac{\partial x}{\partial y})^2+(\frac{\partial x}{\partial z})^2}\mathrm dy \mathrm dz &= |(\frac{\partial F}{\partial x})^{-1}\nabla F|\mathrm dy\mathrm dz \\
 &= \sqrt{1+(\frac{\partial y}{\partial x})^2+(\frac{\partial y}{\partial z})^2}\mathrm dx \mathrm dz &= |(\frac{\partial F}{\partial y})^{-1}\nabla F|\mathrm dx\mathrm dz \\
+&= \sqrt{1+(\frac{\partial z}{\partial x})^2+(\frac{\partial z}{\partial y})^2}\mathrm dx \mathrm dy &= |(\frac{\partial F}{\partial z})^{-1}\nabla F|\mathrm dx\mathrm dy \\
 \end{matrix}}$$
 
 ### 第二类曲面积分
@@ -97,17 +97,17 @@ $$\boxed{\begin{matrix}
 第二类曲面积分针对于有向面，其方向由取定的法向量决定。
 
 考虑 $\mathbb R^3$ 中的情况，曲面由 $F(x,y,z)=0$ 确定，此时对于某两个积分变量的积分 
-$$\boxed{\displaystyle\iint_\varSigma f_1(\bm P)\mathrm dx\mathrm dy}$$ 
+$$\boxed{\displaystyle\iint_\varSigma f_3(\bm P)\mathrm dx\mathrm dy}$$ 
 称为第二类曲面积分。
 
 同理，将对不同变量的曲面积分合并，得到
-$$\displaystyle\iint_\varSigma f_1(\bm P)\mathrm dx\mathrm dy+f_2(\bm P)\mathrm dy\mathrm dz+f_3(\bm P)\mathrm dx\mathrm dz$$ 
+$$\displaystyle\iint_\varSigma f_1(\bm P)\mathrm dy\mathrm dz+f_2(\bm P)\mathrm dx\mathrm dz+f_3(\bm P)\mathrm dx\mathrm dy$$ 
 
 记 $\mathrm d\bm S = (\mathrm dx\mathrm dy,\mathrm dy\mathrm dz,\mathrm dx\mathrm dz)$，把上式记为向量形式，得到
 $$\boxed{\displaystyle\iint_\varSigma \bm f(\bm P)\cdot\mathrm d\bm S}$$
 此为第二类曲面积分的向量形式。
 
-现在解释一下 $\mathrm d\bm S$ 的来源：在 $\bm P$ 点的单位法向量为 $\bm n = \displaystyle\frac{\nabla F}{|\nabla F|}$，面积元为 $\displaystyle \mathrm dS = |(\frac{\partial F}{\partial z})^{-1}\nabla F|\mathrm dx\mathrm dy=|(\frac{\partial F}{\partial x})^{-1}\nabla F|\mathrm dy\mathrm dz=|(\frac{\partial F}{\partial y})^{-1}\nabla F|\mathrm dx\mathrm dz$，于是 $\mathrm d \bm S = \bm n \mathrm dS=(\mathrm dx\mathrm dy,\mathrm dy\mathrm dz,\mathrm dx\mathrm dz)$。
+现在解释一下 $\mathrm d\bm S$ 的来源：在 $\bm P$ 点的单位法向量为 $\bm n = \displaystyle\frac{\nabla F}{|\nabla F|}$，面积元为 $\displaystyle \mathrm dS =|(\frac{\partial F}{\partial x})^{-1}\nabla F|\mathrm dy\mathrm dz=|(\frac{\partial F}{\partial y})^{-1}\nabla F|\mathrm dx\mathrm dz = |(\frac{\partial F}{\partial z})^{-1}\nabla F|\mathrm dx\mathrm dy$，于是 $\mathrm d \bm S = \bm n \mathrm dS=(\mathrm dy\mathrm dz,\mathrm dx\mathrm dz,\mathrm dx\mathrm dy)$。
 
 ### 两类曲面积分的转换
 
@@ -115,7 +115,7 @@ $$\boxed{\displaystyle\iint_\varSigma \bm f(\bm P)\cdot\mathrm d\bm S}$$
 $$\iint_\varSigma \bm f(\bm P)\cdot\mathrm d\bm S=\iint_\varSigma \bm f(\bm P)\cdot\bm n\mathrm d S$$
 其中 $\bm n$ 是法向量。
 
-## 引入
+## 格林-高斯-斯托克斯公式
 
 广为熟知的 **牛顿-莱布尼茨** 公式形式如下：
 
@@ -129,27 +129,48 @@ $$\oint_{\partial D}F(x)\mathrm{d}x=\int_D F'(x)\mathrm dx$$
 
 左侧可以视为 $F(x)$ 在区域 $D$ 上的“通量”，$F'(x)$ 可以视为 $F(x)$ 在 $D$ 内的“散度”。
 
-## 格林公式
+### 格林公式
 
 然后顺理成章地得到格林公式的第一式为
-
 
 $$\boxed{\oint_{\partial D}\bm F\cdot \bm n \mathrm ds=\iint_D (\nabla\cdot\bm F)\mathrm d S}$$
 
 此处 $D$ 是 $\mathbb{R^2}$ 内某个单连通区域，$\bm n=(\cos\beta,-\cos\alpha)$ 是向外的单位法向量，表示函数 $\bm F$ 在区域 $D$ 的边界 $\partial D$ 的通量等于其散度在 $D$ 内的积分。
 
 $\bm F = (P(x), Q(y))$，定义$\bm R =(Q(x), P(y))$，将上式展开得
+$$\displaystyle\oint_{\partial D}(P,Q)\cdot (\cos \beta, -\cos\alpha) \mathrm ds=
+\boxed{\oint_{\partial D}(P\mathrm dy-Q\mathrm dx) =
+\iint_D (\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y})\mathrm d S}$$
 
-$\displaystyle\oint_{\partial D}(P,Q)\cdot (\cos \beta, -\cos\alpha) \mathrm ds=
-\oint_{\partial D}(P\cos\beta-Q\cos\alpha) \mathrm ds=
-\oint_{\partial D}(P\mathrm dy-Q\mathrm dx) =
-\iint_D (\frac{\partial F}{\partial x}+\frac{\partial F}{\partial y})\mathrm d S$
+（框起的部分即同济版高等数学教材中的格林公式）于是得到
+$$\displaystyle\oint_{\partial D}(P,Q)\cdot (\cos \beta, \cos\alpha) \mathrm ds=
+\iint_D (\frac{\partial P}{\partial x}- \frac{\partial Q}{\partial y})\mathrm d S$$
 
-然后继续向外推广，得到高斯公式
+此时有
+$$\boxed{\oint_{\partial D}\bm R\cdot \bm\tau\mathrm ds = \iint_D(\nabla\times\bm R)\mathrm dS}$$
+此即格林公式第二式。
 
-$$\oiint_{\partial D}\bm F(\bm P)\cdot \bm n \mathrm dS=\iiint_D (\nabla\cdot\bm F)\mathrm d V$$
 
-此处 $D$ 是 $\mathbb{R^3}$ 内某个单连通区域，$n$ 是向外的法向量，同样表示函数 $\bm F$ 在区域 $D$ 的边界 $\partial D$ 的通量等于其散度在 $D$ 内的积分。
+
+### 高斯公式
+
+将格林公式第一式继续向外推广，得到高斯公式
+
+$$\boxed{\oiint_{\partial D}\bm F(\bm P)\cdot \bm n \mathrm dS=\iiint_D (\nabla\cdot\bm F)\mathrm d V}$$
+
+此处 $D$ 是 $\mathbb{R^3}$ 内某个单连通区域，$n$ 是向外的法向量，同样表示函数 $\bm F$ 在区域 $D$ 的边界 $\partial D$ 的通量等于其散度在 $D$ 内的积分。可以把 $\bm n \mathrm dS$ 记作 $\mathrm d\bm S$。
+
+::: note
+
+记 $\bm F(\bm P) = (Q(\bm P), R(\bm P), S(\bm S))$ 把它展开，即得到 
+$$\boxed{\oiint_{\partial D}\bm Q \mathrm dy\mathrm dz + R\mathrm dx\mathrm dz + S\mathrm dx\mathrm dy 
+= \iiint_D (\frac{\partial Q}{\partial x}+\frac{\partial R}{\partial y}+\frac{\partial S}{\partial z})\mathrm dV}$$
+
+此同济版高等数学教材中的格林公式。
+
+:::
+
+::: tip
 
 在物理上，由高斯定律的微分形式得到 $\nabla \cdot \bm D = \rho$，于是
 
@@ -157,4 +178,103 @@ $$\oiint_{\partial D}\bm D\cdot \mathrm d\bm S = \iiint_D (\nabla\cdot\bm D)\mat
 
 便得到了高斯定律的积分形式。
 
-是
+:::
+
+### 斯托克斯公式
+
+将格林公式第二式向三维非闭合曲面推广，得到斯托克斯公式
+
+$$\iint_\varSigma \nabla \times \bm F \cdot \mathrm d\bm S = \oint_\Gamma \bm F \cdot \mathrm d \bm r$$
+
+此处 $\varSigma$ 是 $\mathbb{R^3}$ 内某个连同闭曲面，$n$ 是向外的法向量，同样表示函数 $\bm F$ 在区域 $D$ 的边界 $\partial D$ 的通量等于其散度在 $D$ 内的积分。
+
+::: note
+
+记 $\bm F(\bm P) = (Q(\bm P), R(\bm P), S(\bm S))$ 把它展开，即得到 
+
+
+$$
+\begin {aligned}
+
+\iint_\varSigma 
+    \begin{vmatrix}
+        \bm e_x & \bm e_y & \bm e_z \\ \\
+        \displaystyle{\frac{\partial}{\partial x}} & \displaystyle{\frac{\partial}{\partial y}} & \displaystyle{\frac{\partial}{\partial z}} \\ \\
+        Q & R & S \\
+    \end{vmatrix}
+    \cdot \mathrm d\bm S 
+& =
+\iint_\varSigma 
+    \begin{vmatrix}
+        \mathrm dy\mathrm dz & \mathrm dx\mathrm dz & \mathrm dx\mathrm dy \\ \\
+        \displaystyle{\frac{\partial}{\partial x}} & \displaystyle{\frac{\partial}{\partial y}} & \displaystyle{\frac{\partial}{\partial z}} \\ \\
+        Q & R & S \\
+    \end{vmatrix} \\
+& =
+\iint_\varSigma 
+    (\frac{\partial S}{\partial y} - \frac{\partial R}{\partial z}) \mathrm dy\mathrm dz
++
+    (\frac{\partial Q}{\partial z} - \frac{\partial S}{\partial x}) \mathrm dx\mathrm dz
++
+    (\frac{\partial R}{\partial x} - \frac{\partial Q}{\partial y}) \mathrm dx\mathrm dy
+\\
+& =
+\oint_\Gamma Q\mathrm dx+R\mathrm dy+S\mathrm dz
+\end{aligned}
+$$
+
+最后两个式子：
+$$\boxed{
+\iint_\varSigma 
+    (\frac{\partial S}{\partial y} - \frac{\partial R}{\partial z}) \mathrm dy\mathrm dz
++
+    (\frac{\partial Q}{\partial z} - \frac{\partial S}{\partial x}) \mathrm dx\mathrm dz
++
+    (\frac{\partial R}{\partial x} - \frac{\partial Q}{\partial y}) \mathrm dx\mathrm dy
+=
+\oint_\Gamma Q\mathrm dx+R\mathrm dy+S\mathrm dz
+}$$
+
+此同济版高等数学教材中的斯托克斯公式。
+
+:::
+
+### 高斯公式和斯托克斯公式在电磁学中的应用
+
+::: tip
+
+### Maxwell 方程组
+
+Maxwell方程组的微分形式为
+
+$$\nabla\cdot \bm D=\rho_f \tag{1}$$
+$$\nabla \cdot \bm B = 0 \tag{2}$$
+$$\nabla \times \bm E = -\frac{\partial \bm B}{\partial t} \tag{3}$$
+$$\nabla \times \bm H = \bm J_f + \frac{\partial \bm D}{\partial t} \tag{4}$$
+
+把 $(1), (2)$ 代入高斯公式，得
+
+$$\oiint_{\partial\varSigma} \bm D \cdot \mathrm d\bm S  = \iiint_\varSigma (\nabla\cdot \bm D)\mathrm dV =\iiint_\varSigma \rho_f\mathrm dV = Q_f$$
+$$\oiint_{\partial\varSigma} \bm B \cdot \mathrm d\bm S  = \iiint_\varSigma (\nabla\cdot \bm B)\mathrm dV = 0$$
+
+把 $(3), (4)$ 代入斯托克斯公式，得
+
+$$\oint_\Gamma \bm E \cdot \mathrm d \bm r = \iint_\varSigma \nabla \times \bm E \cdot \mathrm d\bm S = \iint_\varSigma -\frac{\partial \bm B}{\partial t} \cdot \mathrm d\bm S = -\frac{\partial}{\partial t} \iint_\varSigma \bm B\cdot \mathrm d\bm S = - \frac{\partial \varPsi_B}{\partial t}$$
+
+$$\oint_\Gamma \bm H \cdot \mathrm d \bm r = \iint_\varSigma \nabla \times \bm H \cdot \mathrm d\bm S = \iint_\varSigma (\bm J_f+\frac{\partial \bm D}{\partial t}) \cdot \mathrm d\bm S = I_f + \frac{\partial}{\partial t} \iint_\varSigma \bm D\cdot \mathrm d\bm S $$
+
+总结得
+
+$$\boxed{\begin{matrix}\begin{aligned}
+\oiint_{\partial\varSigma} \bm D \cdot \mathrm d\bm S  &= Q_f \\
+\oiint_{\partial\varSigma} \bm B \cdot \mathrm d\bm S  &= 0 \\
+\end{aligned} \\
+\begin{aligned}
+\oint_\Gamma \bm E \cdot \mathrm d \bm r &= - \frac{\partial \varPsi_B}{\partial t} \\
+\oint_\Gamma \bm H \cdot \mathrm d \bm r &= I_f + \frac{\partial \varPsi_D}{\partial t} 
+\end{aligned}\end{matrix}}
+$$
+
+便得到Maxwell方程组的积分形式。
+
+:::
