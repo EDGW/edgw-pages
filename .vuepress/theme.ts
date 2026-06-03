@@ -4,11 +4,11 @@ import { enNavbar } from "./navbar/index.js";
 import { enSidebar } from "./sidebar/index.js";
 
 export default hopeTheme({
-  hostname: "https://edgw.cc",
+  hostname: "https://i.kako-chan.com",
 
   author: {
     name: "EDGW_",
-    url: "https://edgw.cc",
+    url: "https://i.kako-chan.cc",
   },
 
   logo: "https://avatars.githubusercontent.com/u/61033043?v=4&size=1024",
@@ -36,7 +36,7 @@ export default hopeTheme({
       displayFooter: true,
 
       blog: {
-        description: "This is EDGW_, or you can call me Kako.",
+        description: "This is EDGW_, or you can call me kako.",
         intro: "/intro.html",
       },
 
