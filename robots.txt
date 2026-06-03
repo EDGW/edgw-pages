@@ -1,4 +1,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: https://edgw.cc/sitemap.xml
+Sitemap: https://i.kako-chan.com/sitemap.xml
