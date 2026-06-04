@@ -1,6 +1,9 @@
 ---
 icon: book
 title: 线面积分和斯托克斯公式
+category: 
+    - 数学
+
 ---
 
 
@@ -20,11 +23,11 @@ title: 线面积分和斯托克斯公式
 
 它具有定积分的一般性质。如果$L$分段光滑，则积分可分段求得。
 
-对于参数方程 $\bm x=\bm\varphi(t)$，该曲线的导（切向量）函数为 $\bm\tau=\bm\varphi'(t)$，于是 $\mathrm ds = |\mathrm d\bm x| = |\bm\varphi'(t)||\mathrm dt$|，得到
+对于参数方程 $\bm x=\bm\varphi(t)$，该曲线的导（切向量）函数为 $\bm\tau=\bm\varphi'(t)$，于是 $\mathrm ds = |\mathrm d\bm x| = |\bm\varphi'(t)||\mathrm dt|$，得到
 
-$$\boxed{\mathrm ds = |\bm\varphi'(t)||\mathrm dt| = \sqrt{\sum \varphi_k'(t)}|\mathrm dt|}$$
+$$\boxed{\mathrm ds = |\bm\varphi'(t)||\mathrm dt| = \sqrt{\sum \varphi_k'^2(t)}|\mathrm dt|}$$
 
-替换之后便可以根据 $t$ 的范围把曲线积分转换成有上下限的定积分，值得注意的是，**若 $L$ 是 $t$ 从 $\alpha$ 变化至 $\beta$ 而由参数方程得到的曲线，则求定积分时必要求 $\alpha \le \beta$**，因为 $\mathrm ds$ 总是正数，而 $\mathrm dt$则有可能是负数，仅当要求 $\alpha \le \beta$ 时，才有 $|\mathrm dt| = \mathrm dt$。
+替换之后便可以根据 $t$ 的范围把曲线积分转换成有上下限的定积分，值得注意的是，**我们说 $L$ 是参数方程在 $t \in [\alpha, \beta]$ 范围内而得到的曲线，该条件隐含了 $\alpha \le \beta$**，因为 $\mathrm ds$ 总是正数，而 $\mathrm dt$则有可能是负数，仅当要求 $\alpha \le \beta$ 时，才有 $|\mathrm dt| = \mathrm dt$。
 
 ### 第二类曲线积分
 
@@ -44,17 +47,23 @@ $$\boxed{\begin{cases}
 
 于是第二类曲线积分可以写成对切线的积分
 $$\displaystyle \int_L\bm f(\bm P)\cdot\mathrm d\bm r=\int_L\bm f(\bm P)\cdot\bm\varphi' \mathrm dt$$
-于是该积分被称作**环量积分**，单位切向量 $\mathrm d\bm r$ 被称作有向曲线元。
+于是该积分被称作**环量积分**，切向量 $\mathrm d\bm r$ 被称作有向曲线元。
 
 特别地，在 $\mathbb{R^2}$中，光滑曲线有唯一的外单位法向量 $\bm n$，因此可以做积分
 $$\int_L\bm f(\bm P)\cdot\bm n |\mathrm d\bm r|=\int_L\bm f(\bm P)\cdot\bm n |\bm\varphi'|\mathrm dt$$
 该积分被称作 **通量积分**。
 
-值得注意的是，在换元后，第二类曲线积分并没有规定 $\mathrm dt$ 的符号，因此此时可以不计较 $\alpha$ 和 $\beta$ 的大小，所以**此时 $L$ 是一条有向曲线，$\displaystyle \boxed{\int_{L^+}\bm f(\bm P)\cdot\mathrm d\bm r=-\int_{L^-}\bm f(\bm P)\cdot\mathrm d\bm r}$**，$L^+$ 和 $L^-$ 是方向相反的同一条曲线。
+::: note
+
+把切向积分定义为环量积分，是因为我们把切向定义为曲线的方向。若把法向定义为曲线的方向，则环量积分和通量积分的定义要互换。
+
+:::
+
+值得注意的是，在换元后，第二类曲线积分并没有规定 $\mathrm dt$ 的符号，**此时 $L$ 是一条有向曲线，其方向由 $\alpha \rightarrow \beta$ 规定，此处 $\alpha, \beta$ 无需满足某种大小关系 ，$\displaystyle \boxed{\int_{L^+}\bm f(\bm P)\cdot\mathrm d\bm r=-\int_{L^-}\bm f(\bm P)\cdot\mathrm d\bm r}$**，$L^+$ 和 $L^-$ 是方向相反的同一条曲线。
 
 ### 两类曲线积分的转换
 
-对于环量积分，显然 $\displaystyle \mathrm d\bm r = \bm \varphi' \mathrm dt = \bm \tau\mathrm ds$，$\bm \tau$ 是单位切向量。同理，对于通量积分，显然 $\displaystyle \bm n |\bm\varphi'| \mathrm dt = \bm n\mathrm ds$，$\bm n$ 是单位切向量。
+对于环量积分，显然 $\displaystyle \mathrm d\bm r = \bm \varphi' \mathrm dt = \bm \tau\mathrm ds$，$\bm \tau$ 是单位切向量。同理，对于通量积分，显然 $\displaystyle \bm n |\bm\varphi'| \mathrm dt = \bm n\mathrm ds$，$\bm n$ 是单位法向量。
 
 于是**环量积分**可以写作
 $$\boxed{\displaystyle\int_L\bm f(\bm P)\cdot\mathrm d\bm r =\displaystyle\int_L\bm f(\bm P)\cdot \bm \tau \mathrm ds} $$
@@ -73,7 +82,7 @@ $$\boxed{\displaystyle\int_L\bm f(\bm P)\cdot \bm n \mathrm ds}$$
 
 第一类曲面积分将面积作为积分变量，其形式为 $\displaystyle\iint_\Sigma f(\bm P) \mathrm dS$。
 
-它具有定积分的一般性质。如果$L$分片光滑，则积分可分片求得。
+它具有定积分的一般性质。如果$\varSigma$分片光滑，则积分可分片求得。
 
 设 $\varSigma$ 由 $\mathbb R^2 \rightarrow \mathbb R^n$ 的函数 $\bm f(t,s)$ 给出，则面积元 $\displaystyle{\mathrm dS =\|\frac{\partial \bm f}{\partial t}\wedge\frac{\partial \bm f}{\partial s}\|}\mathrm dt\mathrm ds$ ，但是这种情况过于复杂了，现在只讨论三维空间中的情况，此时 $\displaystyle\boxed{\mathrm dS = |\frac{\partial \bm f}{\partial t}\times\frac{\partial \bm f}{\partial s}|\mathrm dt\mathrm ds}$ 。
 
@@ -103,9 +112,8 @@ $$\boxed{\displaystyle\iint_\varSigma f_3(\bm P)\mathrm dx\mathrm dy}$$
 同理，将对不同变量的曲面积分合并，得到
 $$\displaystyle\iint_\varSigma f_1(\bm P)\mathrm dy\mathrm dz+f_2(\bm P)\mathrm dx\mathrm dz+f_3(\bm P)\mathrm dx\mathrm dy$$ 
 
-记 $\mathrm d\bm S = (\mathrm dx\mathrm dy,\mathrm dy\mathrm dz,\mathrm dx\mathrm dz)$，把上式记为向量形式，得到
+记 $\mathrm d\bm S = (\mathrm dy\mathrm dz,\mathrm dx\mathrm dz,\mathrm dx\mathrm dy)$，把上式记为向量形式，得到
 $$\boxed{\displaystyle\iint_\varSigma \bm f(\bm P)\cdot\mathrm d\bm S}$$
-此为第二类曲面积分的向量形式。
 
 现在解释一下 $\mathrm d\bm S$ 的来源：在 $\bm P$ 点的单位法向量为 $\bm n = \displaystyle\frac{\nabla F}{|\nabla F|}$，面积元为 $\displaystyle \mathrm dS =|(\frac{\partial F}{\partial x})^{-1}\nabla F|\mathrm dy\mathrm dz=|(\frac{\partial F}{\partial y})^{-1}\nabla F|\mathrm dx\mathrm dz = |(\frac{\partial F}{\partial z})^{-1}\nabla F|\mathrm dx\mathrm dy$，于是 $\mathrm d \bm S = \bm n \mathrm dS=(\mathrm dy\mathrm dz,\mathrm dx\mathrm dz,\mathrm dx\mathrm dy)$。
 
@@ -113,7 +121,7 @@ $$\boxed{\displaystyle\iint_\varSigma \bm f(\bm P)\cdot\mathrm d\bm S}$$
 
 上面已经轻松给出了
 $$\iint_\varSigma \bm f(\bm P)\cdot\mathrm d\bm S=\iint_\varSigma \bm f(\bm P)\cdot\bm n\mathrm d S$$
-其中 $\bm n$ 是法向量。
+其中 $\bm n$ 是法向量，因此第二类曲面积分也可以称作曲面的 **通量积分**。
 
 ## 格林-高斯-斯托克斯公式
 
@@ -135,7 +143,7 @@ $$\oint_{\partial D}F(x)\mathrm{d}x=\int_D F'(x)\mathrm dx$$
 
 $$\boxed{\oint_{\partial D}\bm F\cdot \bm n \mathrm ds=\iint_D (\nabla\cdot\bm F)\mathrm d S}$$
 
-此处 $D$ 是 $\mathbb{R^2}$ 内某个单连通区域，$\bm n=(\cos\beta,-\cos\alpha)$ 是向外的单位法向量，表示函数 $\bm F$ 在区域 $D$ 的边界 $\partial D$ 的通量等于其散度在 $D$ 内的积分。
+其中 $D$ 是 $\mathbb{R^2}$ 上的有界闭区域，其边界至少是分段光滑的（可以有棱边），$\bm n=(\cos\beta,-\cos\alpha)$ 是向外的单位法向量，$\bm F$ 在 $D$ 内一阶偏导数连续、在 $D$ 上连续，表示**函数 $\bm F$ 在区域 $D$ 的边界 $\partial D$ 的通量等于其散度在 $D$ 内的积分**，这个公式的几何意义是显而易见的。
 
 $\bm F = (P(x,y), Q(x,y))$，定义$\bm R =(Q(x,y), P(x,y))$，将上式展开得
 $$\displaystyle\oint_{\partial D}(P,Q)\cdot (\cos \beta, -\cos\alpha) \mathrm ds=
@@ -148,7 +156,7 @@ $$\displaystyle\oint_{\partial D}(P,Q)\cdot (\cos \beta, \cos\alpha) \mathrm ds=
 
 此时有
 $$\boxed{\oint_{\partial D}\bm R\cdot \bm\tau\mathrm ds = \iint_D(\nabla\times\bm R)\mathrm dS}$$
-此即格林公式第二式。
+此即格林公式第二式。其中 $D$ 是 $\mathbb{R^2}$ 上的有界闭区域，其边界至少是分段光滑的（可以有棱边），$\bm R$ 在 $D$ 内一阶偏导数连续、在 $D$ 上连续，表示**函数 $\bm R$ 在区域 $D$ 的边界 $\partial D$ 的环量等于其旋度在 $D$ 内的积分**，这个公式的几何意义是显而易见的。
 
 
 
@@ -158,12 +166,12 @@ $$\boxed{\oint_{\partial D}\bm R\cdot \bm\tau\mathrm ds = \iint_D(\nabla\times\b
 
 $$\boxed{\oiint_{\partial D}\bm F(\bm P)\cdot \bm n \mathrm dS=\iiint_D (\nabla\cdot\bm F)\mathrm d V}$$
 
-此处 $D$ 是 $\mathbb{R^3}$ 内某个单连通区域，$n$ 是向外的法向量，同样表示函数 $\bm F$ 在区域 $D$ 的边界 $\partial D$ 的通量等于其散度在 $D$ 内的积分。可以把 $\bm n \mathrm dS$ 记作 $\mathrm d\bm S$。
+其中 $D$ 是 $\mathbb{R^3}$ 上的有界闭区域，其边界至少是分片光滑的（可以有棱边），$\bm n$ 是向外的法向量，$\bm F$ 在 $D$ 内一阶偏导数连续、在 $D$ 上连续，同样表示**函数 $\bm F$ 在区域 $D$ 的边界 $\partial D$ 的通量等于其散度在 $D$ 内的积分**。可以把 $\bm n \mathrm dS$ 记作 $\mathrm d\bm S$。
 
 ::: note
 
-记 $\bm F(\bm P) = (Q(\bm P), R(\bm P), S(\bm S))$ 把它展开，即得到 
-$$\boxed{\oiint_{\partial D}\bm Q \mathrm dy\mathrm dz + R\mathrm dx\mathrm dz + S\mathrm dx\mathrm dy 
+记 $\bm F(\bm P) = (Q(\bm P), R(\bm P), S(\bm P))$ 把它展开，即得到 
+$$\boxed{\oiint_{\partial D} Q \mathrm dy\mathrm dz + R\mathrm dx\mathrm dz + S\mathrm dx\mathrm dy 
 = \iiint_D (\frac{\partial Q}{\partial x}+\frac{\partial R}{\partial y}+\frac{\partial S}{\partial z})\mathrm dV}$$
 
 此同济版高等数学教材中的高斯公式。
@@ -186,11 +194,11 @@ $$\oiint_{\partial D}\bm D\cdot \mathrm d\bm S = \iiint_D (\nabla\cdot\bm D)\mat
 
 $$\iint_\varSigma \nabla \times \bm F \cdot \mathrm d\bm S = \oint_\Gamma \bm F \cdot \mathrm d \bm r$$
 
-此处 $\varSigma$ 是 $\mathbb{R^3}$ 内某个连同闭曲面，$n$ 是向外的法向量，同样表示函数 $\bm F$ 在区域 $D$ 的边界 $\partial D$ 的通量等于其散度在 $D$ 内的积分。
+其中 $\varSigma$ 是 $\mathbb{R^3}$ 上的定向曲面，其边界至少是分片光滑的（可以有棱边），$\Gamma = \partial \varSigma$，$\bm n$ 是向外的法向量，$\bm F$ 在 $\varSigma$ 内一阶偏导数连续、在 $\varSigma$ 上连续，同样表示**函数 $\bm F$ 在区域 $\varSigma$ 的边界 $\partial \varSigma$ 的环量等于其旋度在 $\varSigma$ 内的积分**。
 
 ::: note
 
-记 $\bm F(\bm P) = (Q(\bm P), R(\bm P), S(\bm S))$ 把它展开，即得到 
+记 $\bm F(\bm P) = (Q(\bm P), R(\bm P), S(\bm P))$ 把它展开，即得到 
 
 
 $$
@@ -236,6 +244,41 @@ $$\boxed{
 }$$
 
 此同济版高等数学教材中的斯托克斯公式。
+
+:::
+
+### 总结
+
+::: important
+
+**牛顿-莱布尼茨公式**
+
+$$\boxed{\int_a^b \nabla F\mathrm dx = F(b) - F(a)}$$
+其中 $F$ 在 $(a,b)$ 可导，在 $(a,b)$ 连续，且 $F'$ 在 $[a,b]$ 黎曼可积。
+
+**格林公式第一式**
+
+$$\boxed{\iint_D (\nabla\cdot \bm F) \mathrm dS = \oint_{\partial D} \bm F \cdot \bm n \mathrm ds}$$
+其中 $D$ 是某个 $\mathbb R^2$ 上的有界闭区域，其边界至少是分段光滑的（可以有棱边），$\bm F$ 在 $D$ 内一阶偏导数连续，在 $D$ 上连续。
+
+**高斯公式**
+
+$$\boxed{\iiint_D (\nabla\cdot \bm F) \mathrm dV = \oiint_{\partial D} \bm F \cdot \mathrm d\bm S}$$
+其中 $D$ 是某个 $\mathbb R^3$ 上的有界闭区域，其边界至少是分片光滑的（可以有棱边），$\bm F$ 在 $D$ 内一阶偏导数连续，在 $D$ 上连续。
+
+均表示**函数在某个闭区域边界的通量等于其散度之积分**，均要求在有界闭区域内部一阶偏导数连续，在闭区域上连续。
+
+**格林公式第二式**
+
+$$\boxed{\iint_D (\nabla\times \bm F) \mathrm dS = \oint_{\partial D} \bm F \cdot \bm \tau \mathrm ds}$$
+其中 $D$ 是某个 $\mathbb R^2$ 上的有界闭区域，其边界至少是分段光滑的（可以有棱边），$\bm F$ 在 $D$ 内一阶偏导数连续，在 $D$ 上连续。
+
+**斯托克斯公式**
+
+$$\boxed{\iint_D (\nabla\times \bm F)\cdot \mathrm d\bm S = \oint_{\partial D} \bm F \cdot \bm \tau \mathrm ds}$$
+其中 $D$ 是某个 $\mathbb R^3$ 上的定向曲面，其边界至少是分片光滑的（可以有棱边），$\bm F$ 在 $D$ 内一阶偏导数连续，在 $D$ 上连续。
+
+均表示**函数在某个闭合面上边界的环量等于其旋度之积分**，均要求在有界闭区域内部一阶偏导数连续，在闭区域上连续。
 
 :::
 
