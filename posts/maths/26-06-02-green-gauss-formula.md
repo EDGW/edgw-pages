@@ -117,6 +117,14 @@ $$\boxed{\displaystyle\iint_\varSigma \bm f(\bm P)\cdot\mathrm d\bm S}$$
 
 现在解释一下 $\mathrm d\bm S$ 的来源：在 $\bm P$ 点的单位法向量为 $\bm n = \displaystyle\frac{\nabla F}{|\nabla F|}$，面积元为 $\displaystyle \mathrm dS =|(\frac{\partial F}{\partial x})^{-1}\nabla F|\mathrm dy\mathrm dz=|(\frac{\partial F}{\partial y})^{-1}\nabla F|\mathrm dx\mathrm dz = |(\frac{\partial F}{\partial z})^{-1}\nabla F|\mathrm dx\mathrm dy$，于是 $\mathrm d \bm S = \bm n \mathrm dS=(\mathrm dy\mathrm dz,\mathrm dx\mathrm dz,\mathrm dx\mathrm dy)$。
 
+若把 $\mathrm dS$ 的某个表达式带入，得到 
+$$\boxed{\begin{aligned}
+\mathrm d\bm S 
+    &= |(\frac{\partial F}{\partial x})^{-1}|\nabla F \mathrm dy \mathrm dz \\
+    &= |(\frac{\partial F}{\partial y})^{-1}|\nabla F \mathrm dx \mathrm dz \\
+    &= |(\frac{\partial F}{\partial z})^{-1}|\nabla F \mathrm dx \mathrm dy
+\end{aligned}}$$
+
 ### 两类曲面积分的转换
 
 上面已经轻松给出了
