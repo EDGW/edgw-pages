@@ -6,6 +6,7 @@ category:
 
 ---
 
+![这个标签用来追踪浏览量](https://hitscounter.dev/api/hit?url=https%3A%2F%2Fi.kako-chan.com%2Fposts%2Fmaths%2F26-06-02-green-gauss-formula.html&label=Total+Views&icon=circle&color=%23198754&message=&style=for-the-badge&tz=UTC)
 
 个人博客第一篇文居然是数学笔记。。。
 
