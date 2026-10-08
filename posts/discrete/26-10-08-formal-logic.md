@@ -1,6 +1,6 @@
 ---
 icon: book
-title: 形式逻辑学
+title: 数理逻辑
 category: 
     - 数学
 
