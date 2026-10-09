@@ -6,7 +6,7 @@ category:
 
 ---
 
-# 命题
+## 命题
 
 ::: info 概念提要
 
@@ -29,13 +29,25 @@ $a\rightarrow b$ 称为 $a$ 蕴含 $b$，若 $a$ 为真，则 $a\rightarrow b$ �
 
 即 
 
+::: important
+
 $$\boxed{a\rightarrow b \Leftrightarrow \neg a \lor b}$$
+
+:::
 
 若 $a \rightarrow b, b \rightarrow a$ ，称 $a,b$ **等价**，记作 $a\leftrightarrow b$。
 
 即有
 
+::: important
+
 $$\boxed{a\leftrightarrow b \Leftrightarrow (\neg a \lor b) \land (\neg b \lor a)}$$
+
+:::
+
+### 完备性，与非和或非
+
+见 [下文](#联结词完备性-与非和或非)。
 
 ## 命题公式
 
@@ -204,7 +216,7 @@ $(p \lor \neg q \lor r) \land (\neg p \lor \neg q \lor r)$ 就是合取范式，
 
 现在每确定 $n$ 个互不相通的命题变项，再分别确定他们的 literal（肯定或是否定），就可以写出唯一的极小项/极大项了。
 
-对于简单合取式，只有每个 literal 都为真时才为真，因此一个简单合取式只有一个成真赋值，剩下的都是成假赋值；对于简单析取式，则只有一个成假赋值，剩下的都是成真赋值。因此，**在确定了所有的命题变项后，可以用成真（成假）赋值来唯一确定这个合取式（析取式）及其所有 literal**。
+对于简单合取式，只有每个 literal 都为真时才为真，因此一个简单合取式只有一个成真赋值，剩下的都是成假赋值；对于简单析取式，则只有一个成假赋值，剩下的都是成真赋值。因此，**在确定了所有的命题变项后，可以用成真（成假）赋值来唯一确定这个简单合取式（析取式）及其所有 literal**。
 
 某个极大（极小）项的成真（成假）赋值是一个二进制数，这个数字就称为这个项的**下标（项序）**。
 
@@ -214,6 +226,68 @@ $(p \lor \neg q \lor r) \land (\neg p \lor \neg q \lor r)$ 就是合取范式，
 
 ### 主范式
 
-只含有极小项（极大项）的析取范式（合取范式）称作**主析取范式**（**主合取范式**）。
+只含有*互不重复*[^first]的极小项（极大项）的析取范式（合取范式）称作**主析取范式**（**主合取范式**）。
+
+[^first]: 高等教育出版社出版的《离散数学》第三版教材中没有这个限定词。
 
 主析取范式可以简单地表达为 $m_1 \lor m_3 \lor m_5 \lor m_6$，主合取范式也类似。
+
+显然一个公式的真值表是唯一的，然后每个真值和一个简单合取式（析取式）又是唯一对应的，因此，
+
+::: important
+
+**任何命题公式都存在与之等值的主析取范式和主合取范式,并且是唯一的**。
+
+> 这里的唯一不包含主析取范式或者主合取范式的每个简单式的列出顺序，他们可以以任意顺序列出，习惯上一般按照下标从小到大。
+
+:::
+
+### 联结词完备性，与非和或非
+
+接 [上文](#完备性-与非和或非)。
+
+记 $\mathbb Z_2 = \{0,1\}$，定义 $F:\mathbb Z_2^n\rightarrow \mathbb Z_2$ 为 $n$ 元真值函数。对于 $n$ 个确定真值输入，它只会输出一个确定的真值。
+
+那么很显然我们可以写出任意一个 $n$ 元真值函数的真值表，也就是说 **每个真值函数都与唯一的一个主析取范式(主合取范式)等值**，而每个主析取范式对应无穷多个等值的命题公式，所以**每个真值函数对应无穷多个等值的命题公式,每个命题公式又都对应唯一的等值的真值函数**。
+
+现在我们可以用真值函数来研究命题公式的性质。
+
+> 命题公式用联结词表示，那么到底有多少个联结词才能完整表述一个任一等值的命题公式呢？也就是说，究竟要有多少个联结词，才能表达出所有的真值函数？显然 $n$ 元真值函数只有 $2^{2^n}$ 个，是有限的，这个问题就变得简单的多。
+
+把联结词集合记作 $S$，若如果任何 $n$ 元真值函数都可以由仅含 $S$ 中的联结词构成的公式表示,那么称 $S$ 是**联结词完备集**。
+
+:::important
+
+- $\{\neg, \lor, \land \}$ 显然是完备的。
+
+- $\neg$ 与 $\{\rightarrow, \lor, \land\}$ 中的任意一个搭配都是完备的，因为后者可以通过 $\neg$ 互相转化。
+- $\{\neg, \leftrightarrow\}$ 是不完备的。
+
+- $\{\rightarrow, \lor, \land, \leftrightarrow\}$ 是不完备的（所以显然他们的子集也是不完备的）。
+> 也就是说，在 $\neg, \lor,\land,\rightarrow,\leftrightarrow$ 构成的完备集中，一定会出现 $\neg$。
+
+:::
+
+记 $\neg (a\land b)$ 为 $a \uparrow b$，称作**与非**；记 $\neg (a\lor b)$ 为 $a \downarrow b$，称作**或非**。
+
+则 $\neg p \Leftrightarrow p \uparrow p \Leftrightarrow p \downarrow p$。
+
+于是 $p \land q \Leftrightarrow \neg[\neg (p\land q)] \Leftrightarrow \neg (p \uparrow q) \Leftrightarrow (p \uparrow q) \uparrow (p \uparrow q)$，同理也有 $p\lor q \Leftrightarrow (p \downarrow q)\downarrow (p \downarrow q)$。
+
+还可以从另一个方向得到另外两条式子，一共有
+
+$$\boxed{
+    \begin{matrix} 
+    \neg p & \Leftrightarrow & p \uparrow p & \Leftrightarrow & p \downarrow p \\
+    p \land q & \Leftrightarrow & (p \uparrow q) \uparrow (p \uparrow q) & \Leftrightarrow & (p \downarrow p) \downarrow (q \downarrow q) \\ 
+    p \lor q & \Leftrightarrow & (p \downarrow q) \downarrow (p \downarrow q) & \Leftrightarrow & (p \uparrow p) \uparrow (q \uparrow q)
+    \end{matrix}
+}$$
+
+我们发现 $\neg,\land,\lor$ 都可以只用 $\uparrow, \downarrow$ 中的任意一个来表示，因此
+
+::: important
+
+ - $\{\uparrow\}, \{\downarrow\}$ 都是完备的。
+
+:::
